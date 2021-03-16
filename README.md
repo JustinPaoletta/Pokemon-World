@@ -1,4 +1,4 @@
-# Pokemon World
+# POKEMON WORLD
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1. Node v12.18.2
 
@@ -9,6 +9,13 @@ Dependencies Include
 - Google Maps
 - auth0
 - rxjs
+
+## Welcome to the World of Pokemon
+
+- Here you can make your own user account, view every Pokemon's stats in the completed Pokedex, check out their cards, Catch them in an interactive map, view the ones youve captured and give them nicknames and/or release them back to the wild
+- View the gifs below for a quick look at the UI/UX
+
+#### More features coming soon
 
 ## Login Screen and Landing Page
 
