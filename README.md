@@ -15,7 +15,7 @@ Dependencies Include
 - Here you can make your own user account, view every Pokemon's stats in the completed Pokedex, check out their cards, Catch them in an interactive map, view the ones youve captured and give them nicknames and/or release them back to the wild
 - View the gifs below for a quick look at the UI/UX
 
-#### More features coming soon
+#### More features coming soon - Currently working on deployment
 
 ## Login Screen and Landing Page
 
