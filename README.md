@@ -40,3 +40,11 @@ Dependencies Include
 
 ![](side-nav.gif)
 
+# Run this App locally
+
+1) Make sure you have node and git installed on your machine
+2) git clone <this repos url>
+3) Open the project in your favorite text editor (Webstorm - VsCode - Sublime - etc)
+4) npm install
+5) npm start
+6) Navigate to localhost:4200 in your web browser and enjoy!
