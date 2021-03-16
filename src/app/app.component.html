@@ -1,0 +1,17 @@
+<div>
+    <ng-template #login>
+    
+            <div fxLayout="column" style="background-color:rgb(179, 179, 179); height: 100vh;" fxLayoutAlign="center">
+                <div fxLayout="column" fxLayoutAlign="center center">
+                    <img style="margin-top: -80px;" src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/pokemon.gif" />
+                    <img height=200px width="200px" src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/earth.gif" />
+                </div>
+                
+                <app-auth-nav style="margin-top: 30px;" fxLayoutAlign="center center"></app-auth-nav>
+            </div>   
+    
+    </ng-template>
+  
+     
+    <router-outlet *ngIf="auth.isAuthenticated$ | async else login"></router-outlet>
+</div>

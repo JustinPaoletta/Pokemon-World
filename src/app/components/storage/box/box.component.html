@@ -1,0 +1,9 @@
+<div fxLayout="row wrap" style="margin-left: 54px;">
+
+    <div fxLayoutAlign="center center" *ngFor="let pokemon of pokemonBox" (click)="editPokemon(pokemon)"
+         style="cursor:pointer; margin: 8px; border: 4px solid rgb(196, 4, 4); height:110px; width:110px"
+         [matTooltip]="pokemon.NICKNAME ? pokemon.NICKNAME : pokemon.NAME">
+        <img height="36px" src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/Pokemon/{{pokemon.SERIAL}}.gif"/>
+    </div>
+
+</div>

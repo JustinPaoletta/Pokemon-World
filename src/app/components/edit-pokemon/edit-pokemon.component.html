@@ -1,0 +1,15 @@
+<div fxLayoutAlign="center">
+    <div fxLayout="column">
+        <p style="margin-top: 20px;">GIVE YOUR {{data.pokemon.NICKNAME ? data.pokemon.NICKNAME.toUpperCase() : data.pokemon.NAME | uppercase }} A NEW NAME?</p>
+        <div style="text-align: center; margin-top: 20px;">
+            <img width=100px src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/Pokemon/{{data.pokemon.SERIAL}}.gif" />
+        </div>
+        <div fxLayout fxLayoutAlign=" center" style="margin-top: 20px;">
+            <mat-form-field style="width:100%; margin-right:8px;" appearance="outline">
+                <input [(ngModel)]="nickname" matInput placeholder="Enter a nickname"/>
+            </mat-form-field>
+            <mat-icon (click)="changeName(data.pokemon)" style="cursor: pointer;">save</mat-icon>
+        </div>
+        <button (click)="releasePokemon(data.pokemon)" mat-button style="background-color: rgb(139, 139, 139);">RELEASE</button>
+    </div> 
+</div>

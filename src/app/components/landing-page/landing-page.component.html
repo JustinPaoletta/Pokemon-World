@@ -1,0 +1,23 @@
+<div fxLayout *ngIf="user">
+
+    <app-sidenav fxFlex [pulse]="true"></app-sidenav>
+
+    <div fxFlex=95 style="height: 100vh;">
+        <div style="text-align: center;">
+            <img src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/logo.png" height="300px" style="position: absolute; margin-left: -225px;">
+        </div>
+        
+        <div style="position: absolute; margin-left: 50px; margin-top: 16px; padding:8px">
+            TRAINER: {{user.nickname | uppercase}}
+        </div>
+
+        <img src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/starter-pokemon.jpg" height="100%" width="100%"/>
+        <button mat-raised-button (click)="openInstructions(user.nickname)" style="position: absolute; background-color: white; color: black; margin-left: -120px; margin-top: 16px; padding-left:16px; padding-right: 16px;">How To Play</button>
+        <mat-icon matTooltip="This App was created for Educational purposes only. All rights belong to their respective owners." style="margin-left:-50px; margin-top: 92vh; position: absolute; z-index: 5;">info</mat-icon>
+    </div>
+    
+</div>
+
+<div *ngIf="!user">
+    <p>Your Session Has Expired Please Login Again</p>
+</div>

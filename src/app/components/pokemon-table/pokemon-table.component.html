@@ -1,0 +1,95 @@
+<div fxLayout style="height: 100vh; background-color: #3B4CCA">
+  <app-sidenav fxFlex></app-sidenav>
+
+  <div fxFlex=95 fxLayout="column" fxLayoutAlign=" center" style="height: 100vh; overflow-y: scroll;">
+
+    <p style="margin-top: 5vh; font-weight:bold; color:white; font-size:16px">Click on a Pokemon to View its Card</p>
+    
+    <form style="padding: 16px 0px 16px;">
+      <mat-form-field appearance="outline">
+        <mat-label>Search the Pokedex</mat-label>
+        <input matInput type="text" (keyup)="doFilter($event.target.value)">
+        <mat-hint>Filter for any criteria</mat-hint>
+      </mat-form-field>
+    </form>
+
+    <div class="mat-elevation-z8" style="margin-bottom: 5vh;">
+
+      <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">  
+
+        <ng-container matColumnDef="NUMBER">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>NUMBER</th>
+          <td mat-cell *matCellDef="let pokemon"> {{pokemon.NUMBER}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="NAME">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>NAME</th>
+          <td mat-cell *matCellDef="let pokemon"> {{pokemon.NAME}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="TYPE1">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>TYPE 1</th>
+          <td mat-cell *matCellDef="let pokemon"> {{pokemon.TYPE1}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="TYPE2">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>TYPE 2</th>
+          <td mat-cell *matCellDef="let pokemon"> {{pokemon.TYPE2}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="HP">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>HITPOINTS</th>
+          <td mat-cell *matCellDef="let pokemon"> {{pokemon.HP}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="ATK">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>ATTACK</th>
+          <td mat-cell *matCellDef="let pokemon"> {{pokemon.ATK}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="DEF">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>DEFENSE</th>
+          <td mat-cell *matCellDef="let pokemon"> {{pokemon.DEF}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="SPD">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>SPEED</th>
+          <td mat-cell *matCellDef="let pokemon"> {{pokemon.SPD}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="SP_ATK">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>SPECIAL ATTACK</th>
+          <td mat-cell *matCellDef="let pokemon"> {{pokemon.SP_ATK}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="SP_DEF">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>SPECIAL DEFENSE</th>
+          <td mat-cell *matCellDef="let pokemon"> {{pokemon.SP_DEF}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="GENERATION">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>GENERATION</th>
+          <td mat-cell *matCellDef="let pokemon"> {{pokemon.GENERATION}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="STATUS">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>STATUS</th>
+          <td mat-cell *matCellDef="let pokemon"> {{pokemon.STATUS}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr style="cursor: pointer;" (click)="openPokeDialog(row)" mat-row *matRowDef="let row; let ind = index; columns: displayedColumns;"></tr>
+
+      </table>
+
+      <mat-paginator 
+        [pageSize]="pageSize"
+        [pageSizeOptions]="pageSizeOptions"
+        (page)="pageEvent = $event"
+        showFirstLastButtons>
+      </mat-paginator>
+      
+    </div>
+
+  </div>
+</div>

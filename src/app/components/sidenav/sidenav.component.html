@@ -1,0 +1,56 @@
+<mat-drawer-container class="container">
+
+    <mat-drawer #drawer mode="side">
+        <div fxFlexFill fxLayout="column">
+            <div fxFlex fxFlexOffset="20">
+                <a routerLink="">
+                    <button mat-flat-button fxLayout>
+                        <div fxLayout fxLayoutAlign="space-around">
+                            <mat-icon>home</mat-icon>
+                            <p>HOME</p>
+                        </div>
+                    </button>
+                </a>
+                <a routerLink="/pokedex">
+                    <button mat-flat-button fxLayout>
+                        <div fxLayout fxLayoutAlign="space-around">
+                            <mat-icon> format_list_bulleted</mat-icon>
+                            <p>POKEDEX</p>
+                        </div>
+                    </button>
+                </a>
+                <a routerLink="/map">
+                    <button mat-flat-button fxLayout>
+                        <div fxLayout fxLayoutAlign="space-around">
+                            <mat-icon>location_on</mat-icon>
+                            <p>CATCH EM</p>
+                        </div>
+                    </button>
+                </a>
+                <a routerLink="/storage">
+                    <button mat-flat-button fxLayout>
+                        <div fxLayout fxLayoutAlign="space-around">
+                            <mat-icon>sd_storage</mat-icon>
+                            <p>STORAGE</p>
+                        </div>
+                    </button>
+                </a>
+                <app-auth-nav fxLayoutAlign="center" style="margin-top: 50px;"></app-auth-nav>
+            </div>
+            <button mat-flat-button fxLayout (click)="drawer.toggle(); toggleContent()">
+                <div fxLayout>
+                    <mat-icon>chevron_left</mat-icon>
+                    <p style="margin-left: 16px;">CLOSE</p>
+                </div>
+            </button>
+        </div>
+    </mat-drawer>
+
+    <mat-drawer-content>
+        <div fxLayout [ngClass]="{ hide: hide }" class="sidenav-content">
+            <img [ngClass]="{pulsing: pulse}" class="pokeball" height="48px" (click)="drawer.toggle(); toggleContent()" 
+            src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/pokeball-nav.png" />
+        </div>
+    </mat-drawer-content>
+
+</mat-drawer-container>

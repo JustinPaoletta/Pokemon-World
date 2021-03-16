@@ -1,0 +1,12 @@
+<div fxLayout style="height: 100vh">
+    <div *ngIf="timerStarted" style="margin-left:300px; margin-top: 12px; position:fixed; z-index: 100; background-color: white; padding-left: 16px; padding-right: 16px;">
+        <p style="margin-top: 8px;">New Pokemon will be released in {{clock}} seconds</p>
+    </div>
+    <app-sidenav fxFlex></app-sidenav>
+    <div fxFlex=95 id="map">
+        <div fxLayout fxLayoutAlign="center center" style="height: 100vh">
+            <mat-spinner style="margin-top: -12px;" [diameter]="50"></mat-spinner>
+            <p #text style="margin-left:32px; font-size: 32px; font-weight: bold;">Locating Pokemon . . .</p>
+        </div>
+    </div> 
+</div>

@@ -1,0 +1,60 @@
+.container {
+  height: 100%;
+}
+  
+.sidenav-content {
+  height: 100%;
+  padding: 12px;
+  position: fixed;
+  background-color: #424242;
+  border-right: 1px solid white;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.pokeball {
+  cursor: pointer;
+}
+
+.pulsing {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(173, 173, 173, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(173, 173, 173, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(173, 173, 173, 0);
+	}
+}
+
+mat-drawer {
+  height: 100%;
+  padding: 8px;
+  position: fixed;
+  border-right: 1px solid white;
+}
+
+mat-icon {
+  margin-top: 8px;
+  margin-right: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  width: 100%;
+}

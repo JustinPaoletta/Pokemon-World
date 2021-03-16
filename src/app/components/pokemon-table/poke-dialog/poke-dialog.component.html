@@ -1,0 +1,76 @@
+<h4 fxLayoutAlign="center">Hover to rotate</h4>
+<div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <div fxLayout="column" fxLayoutAlign=" center" style="border:solid 12px #FFCA39; border-radius: 12px; width:380px; height:480px; font-family: 'Lato'"
+        [ngClass]="{
+            'grass' : data.pokemon.TYPE1 === 'Grass',
+            'fire' : data.pokemon.TYPE1 === 'Fire',
+            'water' : data.pokemon.TYPE1 === 'Water',
+            'bug' : data.pokemon.TYPE1 === 'Bug',
+            'normal' : data.pokemon.TYPE1 === 'Normal',
+            'dark' : data.pokemon.TYPE1 === 'Dark',
+            'steel' : data.pokemon.TYPE1 === 'Steel',
+            'rock' : data.pokemon.TYPE1 === 'Rock',
+            'psychic' : data.pokemon.TYPE1 === 'Psychic',
+            'poison' : data.pokemon.TYPE1 === 'Poison',
+            'ice' : data.pokemon.TYPE1 === 'Ice',
+            'ground' : data.pokemon.TYPE1 === 'Ground',
+            'ghost' : data.pokemon.TYPE1 === 'Ghost',
+            'flying' : data.pokemon.TYPE1 === 'Flying',
+            'fighting' : data.pokemon.TYPE1 === 'Fighting',
+            'fairy' : data.pokemon.TYPE1 === 'Fairy',
+            'electric' : data.pokemon.TYPE1 === 'Electric',
+            'dragon' : data.pokemon.TYPE1 === 'Dragon'
+        }">
+            <div fxLayout="row" style="width:300px; margin-top:12px; font-size: large;">
+                <p fxLayout="column" fxFlex=60 style="margin-left: -10px;">{{data.pokemon.NAME | uppercase}}</p>
+                <p style="margin-right:8px" fxLayout="column" fxFlex fxLayoutAlign=" flex-end">HP {{data.pokemon.HP}}</p>
+                <img height="24px" style="margin-right: 4px;" src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/Type-Icons/{{data.pokemon.TYPE1 | lowercase}}.png">
+                <img *ngIf="data.pokemon.TYPE2" height="24px" src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/Type-Icons/{{data.pokemon.TYPE2 | lowercase}}.png">
+            </div>
+            
+            <div fxLayoutAlign="center center" style="height:200px; width:300px; background-color: white; border:solid 8px #FFCA39;">
+                <img style="max-width: 200px; max-height: 150px;" src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/Pokemon/{{data.pokemon.SERIAL}}.gif" />
+            </div>
+        
+            <div fxLayout fxLayoutAlign="space-around" style=" padding:4px; width: 300px; margin-top:4px; margin-bottom:4px; background-color: rgb(99, 99, 99);">
+                <div>TYPE 1: {{ data.pokemon.TYPE1 }}</div>
+                <div *ngIf="data.pokemon.TYPE2">TYPE 2: {{ data.pokemon.TYPE2 }}</div>
+            </div>
+        
+            <div fxLayout style="width: 300px; margin-top:4px; margin-bottom:4px">
+                <div fxFlex="30">Height: {{ data.pokemon.HEIGHT }}</div>
+                <div fxFlex fxLayoutAlign=" flex-start">Weight: {{ data.pokemon.WEIGHT }}</div>
+            </div>
+        
+            <div fxLayout style="width: 300px; margin-top:4px; margin-bottom:4px; border-top: 2px solid rgb(49, 49, 49); border-bottom: 2px solid rgb(49, 49, 49); padding-top:12px; padding-bottom: 8px;">
+                <div style="margin-top: 2px; font-size: large;">{{ data.pokemon.ABILITY1 | uppercase }}</div>
+                <div style="margin-left:8px">
+                    <img style="margin-left:8px" height=24px src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/stars.png">
+                    <img *ngIf="data.pokemon.HP > 50" style="margin-left:8px" height=24px src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/stars.png">
+                    <img *ngIf="data.pokemon.HP > 100 || data.pokemon.NAME.includes('Mega')" style="margin-left:8px" height=24px src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/stars.png">
+                    <img *ngIf="data.pokemon.HP > 150" style="margin-left:8px" height=24px src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/stars.png">
+                    <img *ngIf="data.pokemon.HP > 200" style="margin-left:8px" height=24px src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/stars.png">
+                </div>
+            </div>
+        
+            <div fxLayout style="width: 300px; margin-top:4px; margin-bottom:4px">
+                <div fxFlex="33">ATK: {{ data.pokemon.ATK }}</div>
+                <div fxFlex="33">DEF: {{ data.pokemon.DEF }}</div>
+                <div fxFlex fxLayoutAlign=" flex-start">SPD: {{ data.pokemon.SPD }}</div>
+            </div>
+        
+            <div fxLayout style="width: 300px; margin-top:4px; margin-bottom:4px">
+                <div fxFlex="33">SP ATK: {{ data.pokemon.SP_ATK }}</div>
+                <div fxFlex>SP DEF: {{ data.pokemon.SP_DEF }}</div>
+            </div>
+        
+        </div>
+        
+      </div>
+      <div class="flip-card-back">
+          <img src="https://pokemon-world.s3.us-east-2.amazonaws.com/assets/card-back.jpg" height="456" width="356" class="back-img"/>
+      </div>
+    </div>
+  </div>
